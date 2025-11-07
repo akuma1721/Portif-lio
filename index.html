@@ -89,23 +89,20 @@
     }
 
     .server {
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 15px;
-      padding: 20px;
+      padding: 10px;
       margin-bottom: 20px;
       transition: all 0.3s ease;
     }
 
-    .server:hover {
-      background: rgba(255, 255, 255, 0.05);
-      transform: scale(1.02);
+    .server img {
+      width: 60%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      transition: transform 0.3s ease;
     }
 
-    .server img {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 15px;
+    .server img:hover {
+      transform: scale(1.03);
     }
 
     .server h3 {
@@ -123,15 +120,31 @@
       text-decoration: none;
       color: #ffffff;
       font-weight: 500;
-      border: 1px solid rgba(255, 255, 255, 0.1);
       padding: 10px 20px;
       border-radius: 8px;
-      transition: background 0.3s ease, border-color 0.3s ease;
+      background: rgba(255, 255, 255, 0.08);
+      transition: background 0.3s ease, transform 0.2s ease;
     }
 
     .server a:hover {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .discord-btn {
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      background: #5865f2;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: 500;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .discord-btn:hover {
+      background: #4752c4;
+      transform: translateY(-3px);
     }
 
     footer {
@@ -157,9 +170,9 @@
   <section id="inicio">
     <h2>Bem-vindo</h2>
     <p>
-      Olá, sou <b>Akuma</b> — Community Administrator & Chat Designer.  
-      Trabalho com a criação, estruturação e aperfeiçoamento de servidores Discord,  
-      desenvolvendo identidades únicas e fluxos de comunicação organizados e elegantes.
+      Olá, sou <b>Akuma</b> — Community Administrator.  
+      Atuo em comunidades desde 2023, com foco em estruturação, organização e desenvolvimento de servidores no Discord.  
+      Busco sempre entregar identidade, clareza e propósito em cada projeto que gerencio.
     </p>
   </section>
 
@@ -168,7 +181,7 @@
     <div class="server">
       <img src="https://i.postimg.cc/bN2d7WW0/cd7d6bbe3c8769a93be067d8ded64040.png" alt="The Ocean" />
       <h3>The Ocean</h3>
-      <p>Servidor temático de Blox Fruits, com estrutura, canais e design de chats criados por mim.</p>
+      <p>Servidor temático de Blox Fruits, com estrutura e gerenciamento criados por mim.</p>
       <a href="https://discord.gg/mwKTV8D3" target="_blank">Visitar Servidor</a>
     </div>
   </section>
@@ -176,41 +189,8 @@
   <section id="contato">
     <h2>Contato</h2>
     <p>Entre em contato comigo através do Discord.</p>
-    <p><b>Discord:</b> @Akuma</p>
+    <a class="discord-btn" href="https://discord.com/users/@meu_id" target="_blank">Entrar em Contato</a>
   </section>
 
   <footer>
-    <p>© 2025 Akuma — Todos os direitos reservados.</p>
-  </footer>
-
-  <script>
-    particlesJS("particles-js", {
-      particles: {
-        number: { value: 70 },
-        color: { value: "#ffffff" },
-        shape: { type: "circle" },
-        opacity: { value: 0.2, random: true },
-        size: { value: 3, random: true },
-        line_linked: {
-          enable: true,
-          distance: 130,
-          color: "#ffffff",
-          opacity: 0.15,
-          width: 1
-        },
-        move: {
-          enable: true,
-          speed: 1.2,
-          random: true,
-          out_mode: "out"
-        }
-      },
-      interactivity: {
-        events: { onhover: { enable: true, mode: "repulse" }, resize: true },
-        modes: { repulse: { distance: 100 } }
-      },
-      retina_detect: true
-    });
-  </script>
-</body>
-</html>
+    <p>© 2
