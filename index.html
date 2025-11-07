@@ -161,7 +161,7 @@
             font-weight: 700;
         }
         
-        /* --- Seção de Comunidades (Adicionada) --- */
+        /* --- Seção de Comunidades --- */
         .secao-comunidades {
             padding: 40px 20px;
             margin-bottom: 50px;
@@ -192,184 +192,12 @@
             width: 100%;
             height: 150px;
             object-fit: cover;
-            /* Placeholder para o fundo */
-            background-color: #333; 
+            background-size: cover;
+            background-position: center;
             border-bottom: 3px solid var(--cor-primaria);
         }
-
-        .card-conteudo {
-            padding: 15px;
-        }
-
-        .card-titulo {
-            font-size: 1.3em;
-            font-weight: 700;
-            color: var(--cor-secundaria);
-            margin-bottom: 5px;
-        }
-
-        .card-descricao {
-            font-size: 0.9em;
-            color: #ccc;
-            margin-bottom: 15px;
-        }
-
-        .botao-join {
-            display: inline-block;
-            padding: 8px 20px;
-            background-color: var(--cor-discord);
-            color: var(--cor-texto);
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: background-color 0.2s;
-        }
-
-        .botao-join:hover {
-            background-color: #4e59c7;
-        }
         
-        /* --- Seção de Contato/Conversar --- */
-        .secao-conversar {
-            padding: 50px 20px;
-            margin-top: 50px;
-        }
-        
-        /* VAMOS CONVERSAR usa .titulo-secao (Branco Sólido) */
-        
-        .bloco-contato-principal {
-            padding: 15px 30px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            background-image: var(--gradiente-contato); 
-            box-shadow: 0 0 20px rgba(138, 43, 226, 0.8);
-            font-weight: 700;
-            font-size: 1.2em;
-        }
-
-        .bloco-contato-principal span {
-            color: var(--cor-secundaria);
-            font-weight: 700;
-            text-shadow: 0 0 5px #00ffff;
-        }
-        
-        .botoes-contato {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-
-        .botao-contato {
-            padding: 10px 25px;
-            border: none;
-            border-radius: 5px;
-            color: var(--cor-texto);
-            font-size: 1em;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.3s;
-            font-weight: 700;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background-image: linear-gradient(90deg, #5865F2, #7289DA); 
-            box-shadow: 0 0 10px #5865F2;
-        }
-
-        .botao-contato:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(88, 101, 242, 0.5);
-        }
-
-        .rodape {
-            margin-top: auto;
-            padding: 20px 0;
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            font-size: 0.9em;
-        }
-
-        @media (max-width: 768px) {
-            .nome-principal {
-                font-size: 3em;
-            }
-            .titulo-secao {
-                font-size: 2.5em;
-            }
-            .botoes-contato {
-                flex-direction: column;
-                gap: 10px;
-            }
-            .botao-contato {
-                width: 80%;
-                margin: 0 auto;
-                justify-content: center;
-            }
-            .comunidades-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-    </style>
-</head>
-<body>
-
-    
-<div id="particles-js"></div>
-
-    <header class="cabecalho-nav">
-        <nav>
-            <ul>
-                <li><a href="#apresentacao" class="ativo">🧑‍💻 Apresentação</a></li>
-                <li><a href="#comunidades">🛡️ Comunidades</a></li>
-                <li><a href="#contato">💬 Contato</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <div class="container">
-
-        <section id="apresentacao" class="secao-apresentacao">
-            <h1 class="nome-principal">Akuma</h1>
-            
-            <p class="descricao-cargo">
-                Community Administrator | Especialista em Estrutura e Engajamento de Comunidades no Discord.
-            </p>
-
-            <div class="experiencia-destaque">
-                <p>
-                    Atuando ativamente em gestão de comunidades desde **2023**, meu foco é a criação e manutenção de espaços digitais de alto desempenho.
-                </p>
-                <p>
-                    Como Community Administrator, especializo-me em arquitetura de servidores e no desenvolvimento de propostas estruturais que garantem a sustentabilidade e o crescimento da comunidade a longo prazo.
-                </p>
-                <p>
-                    Implemento soluções de segurança robusta, workflows eficientes e automações personalizadas para otimizar a experiência do usuário e do staff.
-                </p>
-            </div>
-        </section>
-
-
-        <section id="comunidades" class="secao-comunidades">
-            <h2 class="titulo-secao">Comunidades</h2>
-            <p class="subtitulo-secao">Comunidades que eu já atuo/atuei:</p>
-
-            <div class="comunidades-grid">
-                
-                <div class="card-comunidade">
-                    <div class="card-imagem" style="background-color: #0056b3;"></div> 
-                    <div class="card-conteudo">
-                        <h3 class="card-titulo">The Ocean</h3>
-                        <p class="card-descricao">Coordenador geral: políticas de segurança, estrutura e integração da equipe.</p>
-                        <a href="LINK_DO_CONVITE_OCEAN" class="botao-join">🔗 Join</a>
-                    </div>
-                </div>
-
-                <div class="card-comunidade">
-                    <div class="card-imagem" style="background-color: #FFA500;"></div>
-                    <div class="card-conteudo">
-                        <h3 class="card-titulo">PlaggVerse</h3>
-                        <p class="card-descricao">Community Moderator / Suporte.</p>
-                        <a href="LINK_DO_CONVITE_PLAGGVERSE" class="botao-join">🔗 Join</a>
-                    </div>
+        /* Estilo Específico para o Card "The Ocean" com Imagem Base64 */
+        .card-ocean .card-imagem {
+            /* A imagem do THE OCEAN em Base64 para ser embutida no CSS */
+            background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOAAAADgCAYAAADMTU/fAAACnUlEQVR4nO3dO64URRQF4L/sLBYbKxZ2FzYnNiZ2FhJg1w1wMDFYg+uG0E8Yl7Tq3g2/5/43N7hXU96u9/t9p87Wc+L3FwAAAAAAAAAAAAAAAAAAAAAAAAAAgBv+kX737t1cXV1d/v7++vPz8/P+/fvl4+Pj+n97+/3t/f29Pj4+vn9lZmbGgK2trdG7u7stB2ZmZsrq6mr7w9nZWTk8PNy+WlRUFLd/t7S01B6W/f392/c3Nzd/s7S01F5X//39/Xv8gKz2u/3+378AAAAAAAAAAAAAAAAAAAAAAAAAAGr65f9+f/n5+fXf7e3tN99dXV1dX1+fb3d3t25sbLz9bmtra795x8fH7b++v/9nDw8Pr5+cnJzK4/H4u+np6bX/+Pr6+v74+Pj4+vj4eP/Pz8/P/6+vr6//w8PDw/3r6+vr+t8CAAAAAAAAAAAAAAAAAAAAAAAAAACAvP4L/4P0tUDA32uD+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg39cK+e6+WRAg
