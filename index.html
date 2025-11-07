@@ -6,9 +6,9 @@
     <title>Akuma - Comunidades e Estrutura</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
-        /* Estilos CSS embutidos - Fundo PRETO SÓLIDO */
+        /* Estilos CSS embutidos */
         :root {
-            --cor-fundo: #000000; /* Fundo PRETO SÓLIDO */
+            --cor-fundo: #000000; /* Fundo PRETO SÓLIDO por baixo das partículas */
             --cor-texto: #ffffff;
             --cor-primaria: #8a2be2; /* Roxo */
             --cor-secundaria: #00ffff; /* Ciano */
@@ -26,7 +26,7 @@
         }
 
         body {
-            background-color: var(--cor-fundo); /* Fundo PRETO SÓLIDO */
+            background-color: var(--cor-fundo); 
             color: var(--cor-texto);
             text-align: center;
             line-height: 1.6;
@@ -35,9 +35,27 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            position: relative;
+            position: relative; /* Necessário para posicionar o particles-js */
             overflow-x: hidden;
-            /* Estilos de fundo estelar removidos */
+        }
+
+        /* Estilo para o contêiner de partículas */
+        #particles-js {
+            position: fixed; /* Fixa no fundo */
+            width: 100%;
+            height: 100%;
+            background-color: var(--cor-fundo); /* Garante o fundo preto das partículas */
+            background-image: url(''); /* Nenhuma imagem de fundo para as partículas */
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50% 50%;
+            z-index: -1; /* Manda para trás do conteúdo */
+        }
+
+        /* Garante que o conteúdo fique por cima das partículas */
+        .cabecalho-nav, .container, .rodape {
+            position: relative;
+            z-index: 1; /* Garante que fiquem acima das partículas */
         }
 
         .cabecalho-nav {
@@ -47,11 +65,10 @@
             padding: 15px 0;
             background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro para a barra */
             backdrop-filter: blur(5px);
-            z-index: 10;
+            z-index: 10; /* Permanece acima de tudo */
         }
 
         .cabecalho-nav nav {
-            /* Estilo da barra de navegação */
             background-color: rgba(0, 0, 0, 0.6);
             border-radius: 50px;
             max-width: fit-content;
@@ -83,10 +100,9 @@
         .container {
             max-width: 900px;
             width: 90%;
-            /* Ajusta a margem superior já que o fundo não é mais espacial */
             margin: 100px auto 50px auto;
             padding: 20px;
-            z-index: 5;
+            z-index: 1; 
         }
 
         /* --- Seção de Apresentação --- */
@@ -229,6 +245,8 @@
 </head>
 <body>
 
+    <div id="particles-js"></div>
+
     <header class="cabecalho-nav">
         <nav>
             <ul>
@@ -285,5 +303,114 @@
         &copy; 2025 Akuma. Todos os direitos reservados.
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+        // Configuração básica para as partículas
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80, // Quantidade de partículas
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff" // Cor das partículas (branco)
+                },
+                "shape": {
+                    "type": "circle", // Formato das partículas
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5, // Opacidade das partículas
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3, // Tamanho das partículas
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true, // Habilita linhas entre partículas
+                    "distance": 150, // Distância para conectar
+                    "color": "#ffffff", // Cor das linhas
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true, // Habilita movimento
+                    "speed": 2, // Velocidade do movimento
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true, // Efeito ao passar o mouse
+                        "mode": "grab" // Partículas se atraem
+                    },
+                    "onclick": {
+                        "enable": true, // Efeito ao clicar
+                        "mode": "push" // Adiciona partículas
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
 </body>
 </html>
