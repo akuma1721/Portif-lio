@@ -13,7 +13,6 @@
             --cor-primaria: #8a2be2; /* Roxo */
             --cor-secundaria: #00ffff; /* Ciano */
             --sombra-texto: 0 0 10px rgba(138, 43, 226, 0.7);
-            --gradiente-brilho: linear-gradient(90deg, #8a2be2, #00ffff);
             --gradiente-contato: linear-gradient(90deg, #9932CC, #4B0082); /* Roxo do bloco "Chame no Discord" */
             --cor-discord: #5865F2; /* Cor Discord */
         }
@@ -111,14 +110,17 @@
             margin-bottom: 50px;
         }
 
+        /* AKUMA: BRANCO SÓLIDO */
         .nome-principal {
             font-size: 4.5em; 
             font-weight: 900;
             margin-bottom: 15px;
-            background-image: var(--gradiente-brilho);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 15px rgba(138, 43, 226, 0.9); 
+            color: var(--cor-texto); /* Definido como Branco Sólido */
+            /* Efeitos Neon Removidos: */
+            background-image: none; 
+            -webkit-background-clip: unset;
+            -webkit-text-fill-color: unset;
+            text-shadow: none; 
         }
 
         .descricao-cargo {
@@ -156,12 +158,13 @@
             margin-top: 50px;
         }
 
+        /* VAMOS CONVERSAR: BRANCO SÓLIDO */
         .titulo-conversar {
             font-size: 3em;
             font-weight: 900;
             margin-bottom: 20px;
-            color: var(--cor-texto);
-            text-shadow: 0 0 10px var(--cor-secundaria);
+            color: var(--cor-texto); /* Definido como Branco Sólido */
+            text-shadow: none; /* Efeito Neon Removido */
         }
 
         .sub-titulo {
