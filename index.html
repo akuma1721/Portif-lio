@@ -6,15 +6,15 @@
     <title>Akuma - Comunidades e Estrutura</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
-        /* Estilos CSS embutidos - Fundo Espacial de volta (Mantido) */
+        /* Estilos CSS embutidos - Fundo PRETO SÓLIDO */
         :root {
-            --cor-fundo: #0a0a1a; /* Fundo mais escuro para o espaço */
+            --cor-fundo: #000000; /* Fundo PRETO SÓLIDO */
             --cor-texto: #ffffff;
             --cor-primaria: #8a2be2; /* Roxo */
             --cor-secundaria: #00ffff; /* Ciano */
             --sombra-texto: 0 0 10px rgba(138, 43, 226, 0.7);
             --gradiente-brilho: linear-gradient(90deg, #8a2be2, #00ffff);
-            --gradiente-contato: linear-gradient(90deg, #9932CC, #4B0082); /* Roxo do bloco "Fale Comigo" */
+            --gradiente-contato: linear-gradient(90deg, #9932CC, #4B0082); /* Roxo do bloco "Chame no Discord" */
             --cor-discord: #5865F2; /* Cor Discord */
         }
 
@@ -26,7 +26,7 @@
         }
 
         body {
-            background-color: var(--cor-fundo);
+            background-color: var(--cor-fundo); /* Fundo PRETO SÓLIDO */
             color: var(--cor-texto);
             text-align: center;
             line-height: 1.6;
@@ -37,15 +37,7 @@
             justify-content: flex-start;
             position: relative;
             overflow-x: hidden;
-            /* Estilo para simular o fundo de estrelas */
-            background-image: radial-gradient(white, rgba(255, 255, 255, 0.2) 2px, transparent 40px);
-            background-size: 2px 2px;
-            animation: move-stars 200s linear infinite;
-        }
-
-        @keyframes move-stars {
-            from { background-position: 0 0; }
-            to { background-position: -10000px 5000px; }
+            /* Estilos de fundo estelar removidos */
         }
 
         .cabecalho-nav {
@@ -53,13 +45,13 @@
             top: 0;
             width: 100%;
             padding: 15px 0;
-            background-color: rgba(10, 10, 26, 0.8);
+            background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro para a barra */
             backdrop-filter: blur(5px);
             z-index: 10;
         }
 
         .cabecalho-nav nav {
-            /* Estilo da barra de navegação da imagem */
+            /* Estilo da barra de navegação */
             background-color: rgba(0, 0, 0, 0.6);
             border-radius: 50px;
             max-width: fit-content;
@@ -91,6 +83,7 @@
         .container {
             max-width: 900px;
             width: 90%;
+            /* Ajusta a margem superior já que o fundo não é mais espacial */
             margin: 100px auto 50px auto;
             padding: 20px;
             z-index: 5;
@@ -113,7 +106,6 @@
         }
 
         .descricao-cargo {
-            /* Estilo para a versão profissional */
             font-size: 1.2em;
             font-weight: 600; 
             color: #ccc;
@@ -123,7 +115,7 @@
 
         .experiencia-destaque {
             padding: 25px;
-            background-color: rgba(10, 10, 26, 0.8); 
+            background-color: rgba(20, 20, 20, 0.8); /* Fundo sutilmente mais claro que o fundo */
             border-radius: 15px;
             margin: 0 auto;
             max-width: 750px;
@@ -132,13 +124,12 @@
         }
 
         .experiencia-destaque p {
-            font-size: 1.1em; /* Ajuste para o texto profissional */
+            font-size: 1.1em;
             margin-bottom: 15px;
             font-weight: 400;
         }
 
         .experiencia-destaque strong {
-            /* Mantive o strong no CSS, mas o negrito foi removido do HTML */
             color: var(--cor-secundaria);
             font-weight: 700;
         }
@@ -212,7 +203,7 @@
             margin-top: auto;
             padding: 20px 0;
             width: 100%;
-            background-color: rgba(10, 10, 26, 0.6);
+            background-color: rgba(0, 0, 0, 0.6); /* Rodapé escuro */
             font-size: 0.9em;
         }
 
