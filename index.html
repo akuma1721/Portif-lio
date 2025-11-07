@@ -6,9 +6,9 @@
   <title>Akuma — Portfólio</title>
 
   <!-- Fonte -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet" />
 
-  <!-- Particles.js -->
+  <!-- Partículas -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
   <style>
@@ -16,40 +16,123 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
+      font-family: "Inter", sans-serif;
     }
 
     body {
-      background-color: #0d1117;
-      color: #e6edf3;
+      background: radial-gradient(circle at 30% 30%, #1a1a1d, #0d0d0f 70%);
+      color: #f2f2f2;
       min-height: 100vh;
-      overflow-x: hidden;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       position: relative;
     }
 
-    /* Fundo de partículas */
     #particles-js {
-      position: fixed;
+      position: absolute;
       width: 100%;
       height: 100%;
-      z-index: -1;
       top: 0;
       left: 0;
+      z-index: -1;
     }
 
-    main {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 80px 20px;
-      gap: 60px;
-      animation: fadeIn 1s ease-in;
+    .container {
+      max-width: 600px;
+      width: 90%;
+      text-align: center;
+      padding: 60px 30px;
+      border-radius: 20px;
+      background: rgba(15, 15, 18, 0.85);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 40px rgba(255, 255, 255, 0.05);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 60px rgba(255, 255, 255, 0.08);
+    }
+
+    h1 {
+      font-size: 2.8em;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      font-weight: 400;
+      color: #b3b3b3;
+      margin-bottom: 25px;
+    }
+
+    p {
+      color: #d0d0d0;
+      line-height: 1.7;
+      font-weight: 300;
+      margin-bottom: 40px;
+    }
+
+    .server {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 15px;
+      padding: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .server:hover {
+      background: rgba(255, 255, 255, 0.05);
+      transform: scale(1.02);
+    }
+
+    .server img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+
+    .server h2 {
+      font-size: 1.3em;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .server p {
+      color: #bfbfbf;
+      margin-bottom: 15px;
+      font-size: 0.95em;
+    }
+
+    .server a {
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: 500;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .server a:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    footer {
+      margin-top: 40px;
+      color: #777;
+      font-size: 0.9em;
     }
 
     @keyframes fadeIn {
       from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(20px);
       }
       to {
         opacity: 1;
@@ -57,191 +140,68 @@
       }
     }
 
-    /* Cartão */
-    .card {
-      background: rgba(20, 30, 50, 0.85);
-      border: 1px solid rgba(88, 166, 255, 0.4);
-      border-radius: 20px;
-      padding: 50px 60px;
-      text-align: center;
-      box-shadow: 0 0 35px rgba(88, 166, 255, 0.3);
-      backdrop-filter: blur(10px);
-      max-width: 450px;
-      width: 100%;
-      transition: transform 0.4s, box-shadow 0.4s;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 0 60px rgba(88, 166, 255, 0.5);
-    }
-
-    h1 {
-      font-size: 2.6em;
-      color: #58a6ff;
-      margin-bottom: 5px;
-    }
-
-    .typing {
-      display: inline-block;
-      border-right: 2px solid #58a6ff;
-      white-space: nowrap;
-      overflow: hidden;
-      animation: typing 3.5s steps(20, end) infinite, blink 0.8s step-end infinite alternate;
-    }
-
-    @keyframes typing {
-      0% {
-        width: 0;
-      }
-      50% {
-        width: 100%;
-      }
-      100% {
-        width: 0;
-      }
-    }
-
-    @keyframes blink {
-      50% {
-        border-color: transparent;
-      }
-    }
-
-    h3 {
-      color: #8b949e;
-      font-weight: normal;
-      margin-bottom: 20px;
-      font-size: 1.1em;
-    }
-
-    p {
-      color: #c9d1d9;
-      margin-bottom: 25px;
-      line-height: 1.7;
-    }
-
-    .server {
-      margin-top: 25px;
-      background: rgba(13, 17, 23, 0.7);
-      border-radius: 12px;
-      padding: 15px;
-      transition: transform 0.3s, background 0.3s;
-    }
-
-    .server:hover {
-      background: rgba(25, 35, 50, 0.9);
-      transform: scale(1.03);
-    }
-
-    .server img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 10px;
-    }
-
-    .server a {
-      color: #58a6ff;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    .server a:hover {
-      color: #9ecbff;
-    }
-
-    footer {
-      text-align: center;
-      color: #8b949e;
-      font-size: 0.9em;
-      margin-top: 30px;
-    }
-
-    footer a {
-      color: #58a6ff;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      color: #9ecbff;
+    .fade-in {
+      animation: fadeIn 1.2s ease forwards;
     }
   </style>
 </head>
 <body>
-  <!-- Partículas -->
   <div id="particles-js"></div>
 
-  <main>
-    <div class="card">
-      <h1><span class="typing">🌌 Akuma</span></h1>
-      <h3>Community Administrator & Chat Designer</h3>
+  <div class="container fade-in">
+    <h1>Akuma</h1>
+    <h3>Community Administrator & Chat Designer</h3>
+    <p>
+      Administrador e criador de comunidades no Discord.  
+      Especializado em estruturação de chats, hierarquia de cargos e design de servidores com identidade e propósito.
+    </p>
 
-      <p>
-        Administrador de comunidades no Discord, focado em criação, estrutura e design de chats.  
-        Trabalho para transformar servidores em comunidades únicas, organizadas e visualmente marcantes.
-      </p>
-
-      <div class="server">
-        <img src="https://i.postimg.cc/bN2d7WW0/cd7d6bbe3c8769a93be067d8ded64040.png" alt="The Ocean" />
-        <h3>The Ocean</h3>
-        <p>Servidor temático de Blox Fruits, com estrutura e design de chats criados por mim.</p>
-        <a href="https://discord.gg/mwKTV8D3" target="_blank">🌊 Entrar no servidor</a>
-      </div>
-
-      <footer>
-        <p>Discord: <b>@Akuma</b></p>
-        <p>GitHub: <a href="https://github.com/akuma17" target="_blank">github.com/akuma17</a></p>
-        <p>© 2025 Akuma — Todos os direitos reservados.</p>
-      </footer>
+    <div class="server">
+      <img src="https://i.postimg.cc/bN2d7WW0/cd7d6bbe3c8769a93be067d8ded64040.png" alt="The Ocean" />
+      <h2>The Ocean</h2>
+      <p>Servidor temático de Blox Fruits com estrutura e identidade criadas por mim.</p>
+      <a href="https://discord.gg/mwKTV8D3" target="_blank">Visitar Servidor</a>
     </div>
-  </main>
 
-  <!-- Configuração das partículas -->
+    <footer>
+      <p>Discord: <b>@Akuma</b></p>
+      <p>© 2025 Akuma — Todos os direitos reservados.</p>
+    </footer>
+  </div>
+
   <script>
     particlesJS("particles-js", {
       particles: {
-        number: { value: 80 },
-        color: { value: "#58a6ff" },
+        number: { value: 70 },
+        color: { value: "#ffffff" },
         shape: { type: "circle" },
-        opacity: {
-          value: 0.5,
-          random: true,
-        },
-        size: {
-          value: 3,
-          random: true,
-        },
+        opacity: { value: 0.2, random: true },
+        size: { value: 3, random: true },
         line_linked: {
           enable: true,
-          distance: 150,
-          color: "#58a6ff",
-          opacity: 0.3,
-          width: 1,
+          distance: 130,
+          color: "#ffffff",
+          opacity: 0.15,
+          width: 1
         },
         move: {
           enable: true,
-          speed: 2,
+          speed: 1.2,
           direction: "none",
-          random: false,
+          random: true,
           straight: false,
-          out_mode: "out",
-          attract: { enable: false },
-        },
+          out_mode: "out"
+        }
       },
       interactivity: {
-        detect_on: "canvas",
         events: {
           onhover: { enable: true, mode: "repulse" },
-          onclick: { enable: true, mode: "push" },
-          resize: true,
+          onclick: { enable: false },
+          resize: true
         },
-        modes: {
-          repulse: { distance: 100 },
-          push: { particles_nb: 4 },
-        },
+        modes: { repulse: { distance: 100 } }
       },
-      retina_detect: true,
+      retina_detect: true
     });
   </script>
 </body>
