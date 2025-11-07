@@ -16,29 +16,35 @@
 
     body {
       background: radial-gradient(circle at center, #00111f 0%, #000814 100%);
-      height: 100vh;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
       color: #e6edf3;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
     }
 
-    /* Fundo animado de partículas */
-    #particles {
-      position: absolute;
+    /* Fundo com partículas fixas */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       background: url('https://i.ibb.co/MCvNj9G/blue-particles-bg.gif') center/cover no-repeat;
-      z-index: 0;
-      filter: brightness(0.8);
+      filter: brightness(0.6);
+      z-index: -1;
     }
 
-    /* Cartão principal */
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 20px;
+      gap: 50px;
+    }
+
+    /* Cartão */
     .card {
-      position: relative;
-      z-index: 1;
       background: rgba(20, 30, 50, 0.8);
       border: 2px solid rgba(88, 166, 255, 0.4);
       border-radius: 20px;
@@ -47,18 +53,19 @@
       text-align: center;
       box-shadow: 0 0 25px rgba(88, 166, 255, 0.2);
       max-width: 420px;
-      animation: float 5s ease-in-out infinite;
+      width: 100%;
       transition: transform 0.3s, box-shadow 0.3s;
+      animation: fadeIn 1s ease;
     }
 
     .card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 40px rgba(88, 166, 255, 0.5);
+      transform: translateY(-5px);
+      box-shadow: 0 0 35px rgba(88, 166, 255, 0.4);
     }
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     h1 {
@@ -73,8 +80,9 @@
     }
 
     p {
-      margin-bottom: 20px;
       color: #c9d1d9;
+      margin-bottom: 20px;
+      line-height: 1.6;
     }
 
     .server {
@@ -82,11 +90,12 @@
       background: rgba(13, 17, 23, 0.6);
       border-radius: 12px;
       padding: 15px;
-      transition: background 0.3s;
+      transition: background 0.3s, transform 0.3s;
     }
 
     .server:hover {
       background: rgba(25, 35, 50, 0.8);
+      transform: scale(1.02);
     }
 
     .server img {
@@ -107,34 +116,45 @@
     }
 
     footer {
-      margin-top: 25px;
-      font-size: 0.9em;
+      text-align: center;
       color: #8b949e;
+      margin: 40px 0 20px;
+      font-size: 0.9em;
+    }
+
+    footer a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #9ecbff;
     }
   </style>
 </head>
 <body>
 
-  <div id="particles"></div>
+  <main>
+    <div class="card">
+      <h1>🌌 Akuma</h1>
+      <h3>Community Administrator & Chat Designer</h3>
+      <p>Administrador de comunidades no Discord, especializado em criação, estrutura e design de chats.  
+      Meu foco é transformar servidores em comunidades únicas, organizadas e visualmente marcantes.</p>
 
-  <div class="card">
-    <h1>🌌 Akuma</h1>
-    <h3>Community Administrator & Chat Designer</h3>
-    <p>Administrador de comunidades no Discord, com foco em criação, estrutura e design de chats.  
-       Busco transformar servidores em comunidades únicas, organizadas e atrativas.</p>
-
-    <div class="server">
-      <img src="https://i.postimg.cc/bN2d7WW0/cd7d6bbe3c8769a93be067d8ded64040.png" alt="The Ocean">
-      <h3>The Ocean</h3>
-      <p>Servidor temático de Blox Fruits, com estrutura e identidade visual criadas por mim.</p>
-      <a href="https://discord.gg/mwKTV8D3" target="_blank">🌊 Entrar no servidor</a>
+      <div class="server">
+        <img src="https://i.postimg.cc/bN2d7WW0/cd7d6bbe3c8769a93be067d8ded64040.png" alt="The Ocean">
+        <h3>The Ocean</h3>
+        <p>Servidor temático de Blox Fruits, com estrutura e estética desenvolvidas por mim.</p>
+        <a href="https://discord.gg/mwKTV8D3" target="_blank">🌊 Entrar no servidor</a>
+      </div>
     </div>
 
     <footer>
       <p>Discord: <b>@Akuma</b></p>
-      <p>GitHub: <a href="https://github.com/akuma17" target="_blank" style="color:#58a6ff;">github.com/akuma17</a></p>
+      <p>GitHub: <a href="https://github.com/akuma17" target="_blank">github.com/akuma17</a></p>
+      <p>© 2025 Akuma — Todos os direitos reservados.</p>
     </footer>
-  </div>
+  </main>
 
 </body>
 </html>
