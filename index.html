@@ -6,9 +6,9 @@
     <title>Akuma - Especialista em Comunidades</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
-        /* Estilos CSS embutidos - Para simplificar, coloquei aqui, mas em um projeto real, salve em 'style.css' */
+        /* Estilos CSS embutidos - Fundo Preto Sólido */
         :root {
-            --cor-fundo: #0a0a1a;
+            --cor-fundo: #000000; /* Fundo Preto Sólido */
             --cor-texto: #ffffff;
             --cor-primaria: #8a2be2; /* Roxo */
             --cor-secundaria: #00ffff; /* Ciano */
@@ -26,7 +26,7 @@
         }
 
         body {
-            background-color: var(--cor-fundo);
+            background-color: var(--cor-fundo); /* Fundo Preto */
             color: var(--cor-texto);
             text-align: center;
             line-height: 1.6;
@@ -37,15 +37,7 @@
             justify-content: center;
             position: relative;
             overflow-x: hidden;
-            /* Estilo para simular o fundo de estrelas */
-            background-image: radial-gradient(white, rgba(255, 255, 255, 0.2) 2px, transparent 40px);
-            background-size: 2px 2px;
-            animation: move-stars 200s linear infinite;
-        }
-
-        @keyframes move-stars {
-            from { background-position: 0 0; }
-            to { background-position: -10000px 5000px; }
+            /* Fundo preto sem estrelas */
         }
 
         .cabecalho-nav {
@@ -53,7 +45,7 @@
             top: 0;
             width: 100%;
             padding: 15px 0;
-            background-color: rgba(10, 10, 26, 0.8);
+            background-color: rgba(0, 0, 0, 0.8); /* Fundo preto transparente para o menu */
             backdrop-filter: blur(5px);
             z-index: 10;
         }
@@ -91,7 +83,7 @@
         .secao-apresentacao {
             padding: 40px 20px;
             margin-bottom: 50px;
-            background-color: rgba(0, 0, 0, 0.4);
+            background-color: rgba(10, 10, 26, 0.4); /* Mantenho um fundo sutil escuro para a caixa */
             border-radius: 15px;
             box-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
         }
@@ -232,7 +224,7 @@
             margin-top: auto;
             padding: 20px 0;
             width: 100%;
-            background-color: rgba(10, 10, 26, 0.6);
+            background-color: rgba(0, 0, 0, 0.6); /* Fundo preto transparente para o rodapé */
             font-size: 0.9em;
         }
 
@@ -269,16 +261,20 @@
 
         <section id="apresentacao" class="secao-apresentacao">
             <h1 class="nome-principal">Akuma</h1>
+            
             <p class="descricao-cargo">
-                Gestor de comunidades e desenvolvedor de infraestrutura de servidores, focado em **performance**, **segurança** e **escalabilidade**.
+                Community Administrator e Especialista em Arquitetura de Comunidades Digitais.
             </p>
 
             <div class="experiencia-destaque">
                 <p>
-                    <span style="color: yellow;">⭐</span> Possuo mais de **3 anos de prática** em **gestão de servidores Discord**.
+                    <span style="color: yellow;">⭐</span> Minha atuação em gestão de comunidades se iniciou em **2023**, focada na criação e desenvolvimento de espaços digitais de alto desempenho.
                 </p>
                 <p>
-                    Desenvolvo **projetos de servidores completos** (criação de canais, sistemas de cargos, automações e políticas de segurança) e implemento **estratégias de retenção** para garantir a comunidade **engajada**, **segura** e **próspera**.
+                    Como **Community Administrator**, especializo-me em **arquitetura de servidores** e no desenvolvimento de **propostas estruturais** que garantem a sustentabilidade e o engajamento da comunidade a longo prazo.
+                </p>
+                <p>
+                    Implemento soluções de **segurança robusta**, **workflows eficientes** e **automações personalizadas** para otimizar a experiência do usuário.
                 </p>
             </div>
         </section>
