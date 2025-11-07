@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akuma - Comunidades e Estrutura</title>
+    <title>Akuma - Especialista em Comunidades</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
-        /* Estilos CSS embutidos - Fundo Espacial de volta */
+        /* Estilos CSS embutidos - Fundo Preto Sólido (Revertido para a segunda versão) */
         :root {
-            --cor-fundo: #0a0a1a; /* Fundo mais escuro para o espaço */
+            --cor-fundo: #000000; /* Fundo Preto Sólido */
             --cor-texto: #ffffff;
             --cor-primaria: #8a2be2; /* Roxo */
             --cor-secundaria: #00ffff; /* Ciano */
@@ -26,7 +26,7 @@
         }
 
         body {
-            background-color: var(--cor-fundo);
+            background-color: var(--cor-fundo); /* Fundo Preto */
             color: var(--cor-texto);
             text-align: center;
             line-height: 1.6;
@@ -37,15 +37,7 @@
             justify-content: center;
             position: relative;
             overflow-x: hidden;
-            /* Estilo para simular o fundo de estrelas */
-            background-image: radial-gradient(white, rgba(255, 255, 255, 0.2) 2px, transparent 40px);
-            background-size: 2px 2px;
-            animation: move-stars 200s linear infinite;
-        }
-
-        @keyframes move-stars {
-            from { background-position: 0 0; }
-            to { background-position: -10000px 5000px; }
+            /* Fundo preto sem estrelas */
         }
 
         .cabecalho-nav {
@@ -53,7 +45,7 @@
             top: 0;
             width: 100%;
             padding: 15px 0;
-            background-color: rgba(10, 10, 26, 0.8);
+            background-color: rgba(0, 0, 0, 0.8); /* Fundo preto transparente para o menu */
             backdrop-filter: blur(5px);
             z-index: 10;
         }
@@ -82,14 +74,58 @@
         .container {
             max-width: 900px;
             width: 90%;
-            margin: auto; /* Centraliza verticalmente o conteúdo restante */
+            /* Ajustado para centralizar o conteúdo */
+            margin: 100px auto 50px auto; 
             padding: 20px;
             z-index: 5;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: calc(100vh - 80px); /* Ajusta para ocupar quase toda a tela */
+        }
+
+        /* --- Seção de Apresentação --- */
+        .secao-apresentacao {
+            padding: 40px 20px;
+            margin-bottom: 50px;
+            background-color: rgba(10, 10, 26, 0.4); 
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+        }
+
+        .nome-principal {
+            font-size: 4em;
+            font-weight: 900;
+            margin-bottom: 10px;
+            background-image: var(--gradiente-brilho);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: var(--sombra-texto);
+        }
+
+        .descricao-cargo {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #ccc;
+            margin-bottom: 30px;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .experiencia-destaque {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            margin: 0 auto;
+            max-width: 700px;
+            text-align: left;
+            border-left: 5px solid var(--cor-secundaria);
+        }
+
+        .experiencia-destaque p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        .experiencia-destaque strong {
+            color: var(--cor-secundaria);
+            font-weight: 700;
         }
         
         /* --- Seção de Contato/Conversar --- */
@@ -116,7 +152,7 @@
             padding: 15px;
             border-radius: 10px;
             margin-bottom: 30px;
-            background-image: linear-gradient(90deg, #9932CC, #4B0082); /* Roxo mais escuro */
+            background-image: linear-gradient(90deg, #9932CC, #4B0082); 
             box-shadow: 0 0 15px rgba(138, 43, 226, 0.8);
             font-weight: 600;
         }
@@ -165,19 +201,19 @@
             box-shadow: 0 0 10px #e34034;
         }
 
-        /* Removido: .bloco-projeto-novo */
+        /* O bloco .bloco-projeto-novo foi removido aqui. */
 
         .rodape {
             margin-top: auto;
             padding: 20px 0;
             width: 100%;
-            background-color: rgba(10, 10, 26, 0.6);
+            background-color: rgba(0, 0, 0, 0.6); 
             font-size: 0.9em;
         }
 
         @media (max-width: 600px) {
-            .titulo-conversar {
-                font-size: 2em;
+            .nome-principal {
+                font-size: 3em;
             }
             .botoes-contato {
                 flex-direction: column;
@@ -197,23 +233,44 @@
     <header class="cabecalho-nav">
         <nav>
             <ul>
-                <li><a href="#apresentacao">✨ Apresentação</a></li>
+                <li><a href="#apresentacao" class="ativo">✨ Apresentação</a></li>
                 <li><a href="#experiencia">🛡️ Experiência</a></li>
-                <li><a href="#contato" class="ativo">📧 Contato</a></li>
+                <li><a href="#contato">📧 Contato</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="container">
 
+        <section id="apresentacao" class="secao-apresentacao">
+            <h1 class="nome-principal">Akuma</h1>
+            
+            <p class="descricao-cargo">
+                Community Administrator e Especialista em Arquitetura de Comunidades Digitais.
+            </p>
+
+            <div class="experiencia-destaque">
+                <p>
+                    <span style="color: yellow;">⭐</span> Minha atuação em gestão de comunidades se iniciou em **2023**, focada na criação e desenvolvimento de espaços digitais de alto desempenho.
+                </p>
+                <p>
+                    Como **Community Administrator**, especializo-me em **arquitetura de servidores** e no desenvolvimento de **propostas estruturais** que garantem a sustentabilidade e o engajamento da comunidade a longo prazo.
+                </p>
+                <p>
+                    Implemento soluções de **segurança robusta**, **workflows eficientes** e **automações personalizadas** para otimizar a experiência do usuário.
+                </p>
+            </div>
+        </section>
+
         <section id="contato" class="secao-conversar">
-            <h2 class="titulo-conversar">Akuma</h2>
+            <h2 class="titulo-conversar">Vamos Conectar!</h2>
+
             <p class="sub-titulo">
-                Aberto a oportunidades de moderação, coordenação e estrutura de comunidades.
+                Aberto a oportunidades de gerenciamento, consultoria e otimização de comunidades.
             </p>
 
             <div class="bloco-contato-principal">
-                Fale comigo — <a href="LINK_DO_SEU_DISCORD">Discord</a> ou <a href="mailto:SEU_EMAIL@exemplo.com">Email</a>. Estou online e respondo rápido!
+                Fale comigo — <a href="LINK_DO_SEU_DISCORD">Discord</a> ou <a href="mailto:SEU_EMAIL@exemplo.com">Email</a>. Geralmente estou online e respondo rapidamente!
             </div>
 
             <div class="botoes-contato">
@@ -224,7 +281,8 @@
                     <span style="font-size: 1.2em;">📧</span> Email
                 </a>
             </div>
-        </section>
+            
+            </section>
 
     </div>
 
