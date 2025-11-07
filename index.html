@@ -5,31 +5,182 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Akuma — Portfólio</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
       background-color: #0d1117;
       color: #e6edf3;
-      margin: 0;
-      padding: 50px;
+      line-height: 1.6;
+      scroll-behavior: smooth;
     }
-    h1 {
+
+    header {
+      text-align: center;
+      padding: 60px 20px 40px;
+      background: linear-gradient(180deg, #0d1117 0%, #161b22 100%);
+    }
+
+    header h1 {
+      font-size: 2.5em;
       color: #58a6ff;
     }
-    .box {
-      background: rgba(255,255,255,0.05);
-      padding: 20px;
-      border-radius: 12px;
-      max-width: 600px;
+
+    header h3 {
+      color: #8b949e;
+      font-weight: normal;
+      margin-top: 10px;
     }
+
+    nav {
+      background: #161b22;
+      padding: 10px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      color: #c9d1d9;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #58a6ff;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #58a6ff;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .sobre p {
+      text-align: center;
+      font-size: 1.1em;
+      color: #c9d1d9;
+    }
+
+    .servidores {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: #161b22;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      background: #1f242c;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      color: #58a6ff;
+      margin-bottom: 10px;
+    }
+
+    .contato {
+      text-align: center;
+      font-size: 1.1em;
+      color: #c9d1d9;
+    }
+
+    .contato a {
+      color: #58a6ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #161b22;
+      color: #8b949e;
+      margin-top: 50px;
+    }
+
   </style>
 </head>
 <body>
-  <div class="box">
+
+  <header>
     <h1>🌌 Akuma</h1>
     <h3>Community Administrator & Chat Designer</h3>
-    <p>Especialista em criação e desenvolvimento de servidores Discord, com foco em estrutura e design de chats.</p>
-    <p><b>Discord:</b> @Akuma</p>
-    <p><a href="https://github.com/akuma17" style="color:#58a6ff;">Ver GitHub</a></p>
-  </div>
+  </header>
+
+  <nav>
+    <a href="#sobre">Sobre Mim</a>
+    <a href="#servidores">Servidores</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <section id="sobre" class="sobre">
+    <h2>Sobre Mim</h2>
+    <p>Sou Akuma, administrador de comunidades e designer de chats no Discord. 
+    Tenho experiência na criação e estruturação de servidores, com foco em organização, estética e engajamento. 
+    Meu objetivo é transformar servidores em comunidades únicas e bem apresentadas.</p>
+  </section>
+
+  <section id="servidores">
+    <h2>Servidores que trabalhei</h2>
+    <div class="servidores">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x150?text=Servidor+1" alt="Servidor 1">
+        <h3>The Ocean</h3>
+        <p>Servidor temático de Blox Fruits com sistema de ranks, eventos e design exclusivo.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://via.placeholder.com/300x150?text=Servidor+2" alt="Servidor 2">
+        <h3>Blue Lock Rivals BR</h3>
+        <p>Comunidade focada em eventos e notícias sobre o jogo Blue Lock Rivals.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://via.placeholder.com/300x150?text=Servidor+3" alt="Servidor 3">
+        <h3>Seu Servidor Aqui</h3>
+        <p>Adicione mais servidores que você ajudou a desenvolver e destacar.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="contato">
+    <h2>Contato</h2>
+    <p>Quer entrar em contato comigo?</p>
+    <p>Discord: <b>@Akuma</b></p>
+    <p>GitHub: <a href="https://github.com/akuma17" target="_blank">github.com/akuma17</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Akuma — Todos os direitos reservados.</p>
+  </footer>
+
 </body>
 </html>
