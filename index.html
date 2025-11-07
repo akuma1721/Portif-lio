@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akuma - Especialista em Comunidades</title>
+    <title>Akuma - Comunidades e Estrutura</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
-        /* Estilos CSS embutidos - Fundo Preto Sólido (Revertido para a segunda versão) */
+        /* Estilos CSS embutidos - Fundo Espacial de volta */
         :root {
-            --cor-fundo: #000000; /* Fundo Preto Sólido */
+            --cor-fundo: #0a0a1a; /* Fundo mais escuro para o espaço */
             --cor-texto: #ffffff;
             --cor-primaria: #8a2be2; /* Roxo */
             --cor-secundaria: #00ffff; /* Ciano */
             --sombra-texto: 0 0 10px rgba(138, 43, 226, 0.7);
             --gradiente-brilho: linear-gradient(90deg, #8a2be2, #00ffff);
-            --gradiente-botoes: linear-gradient(90deg, #5865F2, #7289DA); /* Cores Discord */
-            --gradiente-email: linear-gradient(90deg, #e34034, #ff6b6b); /* Cores Email */
+            --gradiente-contato: linear-gradient(90deg, #9932CC, #4B0082); /* Roxo do bloco "Fale Comigo" */
+            --cor-discord: #5865F2; /* Cor Discord */
         }
 
         * {
@@ -26,7 +26,7 @@
         }
 
         body {
-            background-color: var(--cor-fundo); /* Fundo Preto */
+            background-color: var(--cor-fundo);
             color: var(--cor-texto);
             text-align: center;
             line-height: 1.6;
@@ -34,10 +34,18 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start; /* Alinhamento superior para melhor visualização */
             position: relative;
             overflow-x: hidden;
-            /* Fundo preto sem estrelas */
+            /* Estilo para simular o fundo de estrelas */
+            background-image: radial-gradient(white, rgba(255, 255, 255, 0.2) 2px, transparent 40px);
+            background-size: 2px 2px;
+            animation: move-stars 200s linear infinite;
+        }
+
+        @keyframes move-stars {
+            from { background-position: 0 0; }
+            to { background-position: -10000px 5000px; }
         }
 
         .cabecalho-nav {
@@ -45,16 +53,26 @@
             top: 0;
             width: 100%;
             padding: 15px 0;
-            background-color: rgba(0, 0, 0, 0.8); /* Fundo preto transparente para o menu */
+            background-color: rgba(10, 10, 26, 0.8);
             backdrop-filter: blur(5px);
             z-index: 10;
+        }
+
+        .cabecalho-nav nav {
+            /* Estilo da barra de navegação da imagem */
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 50px;
+            max-width: fit-content;
+            margin: 0 auto;
+            padding: 5px 15px;
+            box-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
         }
 
         .cabecalho-nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
         }
 
         .cabecalho-nav a {
@@ -62,20 +80,18 @@
             text-decoration: none;
             padding: 8px 15px;
             border-radius: 20px;
-            transition: background-color 0.3s, color 0.3s;
+            transition: color 0.3s;
+            font-weight: 600;
         }
 
         .cabecalho-nav a:hover, .cabecalho-nav a.ativo {
-            background-color: rgba(255, 255, 255, 0.1);
             color: var(--cor-secundaria);
-            box-shadow: 0 0 5px var(--cor-secundaria);
         }
         
         .container {
             max-width: 900px;
             width: 90%;
-            /* Ajustado para centralizar o conteúdo */
-            margin: 100px auto 50px auto; 
+            margin: 100px auto 50px auto;
             padding: 20px;
             z-index: 5;
         }
@@ -84,43 +100,41 @@
         .secao-apresentacao {
             padding: 40px 20px;
             margin-bottom: 50px;
-            background-color: rgba(10, 10, 26, 0.4); 
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+            /* Fundo sutil para a caixa de experiência */
         }
 
         .nome-principal {
-            font-size: 4em;
+            font-size: 4.5em; /* Aumentado um pouco para se parecer com a imagem */
             font-weight: 900;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             background-image: var(--gradiente-brilho);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: var(--sombra-texto);
+            text-shadow: 0 0 15px rgba(138, 43, 226, 0.9); /* Sombra mais forte */
         }
 
         .descricao-cargo {
-            font-size: 1.2em;
-            font-weight: 600;
+            font-size: 1.1em;
+            font-weight: 400; /* Removido negrito */
             color: #ccc;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
         }
 
         .experiencia-destaque {
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
+            padding: 25px;
+            background-color: rgba(10, 10, 26, 0.8); /* Fundo mais escuro para a caixa */
+            border-radius: 15px;
             margin: 0 auto;
-            max-width: 700px;
+            max-width: 750px;
             text-align: left;
-            border-left: 5px solid var(--cor-secundaria);
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.5); /* Borda brilhante */
         }
 
         .experiencia-destaque p {
-            font-size: 1.1em;
-            margin-bottom: 15px;
-            font-weight: 400;
+            font-size: 1em;
+            margin-bottom: 10px;
+            font-weight: 400; /* Removido negrito */
         }
 
         .experiencia-destaque strong {
@@ -135,34 +149,38 @@
         }
 
         .titulo-conversar {
-            font-size: 2.5em;
-            font-weight: 700;
-            margin-bottom: 30px;
-            color: var(--cor-secundaria);
-            text-shadow: var(--sombra-texto);
+            font-size: 3em;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: var(--cor-texto);
+            text-shadow: 0 0 10px var(--cor-secundaria);
         }
 
         .sub-titulo {
             font-size: 1.1em;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
             color: #aaa;
         }
 
         .bloco-contato-principal {
-            padding: 15px;
+            /* Estilo da caixa roxa longa (image_ae16f8.png) */
+            padding: 15px 30px;
             border-radius: 10px;
             margin-bottom: 30px;
-            background-image: linear-gradient(90deg, #9932CC, #4B0082); 
-            box-shadow: 0 0 15px rgba(138, 43, 226, 0.8);
-            font-weight: 600;
+            background-image: var(--gradiente-contato); 
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.8);
+            font-weight: 700;
+            font-size: 1.2em;
         }
 
-        .bloco-contato-principal a {
+        .bloco-contato-principal span {
+            /* Cor azul/ciano para a palavra Discord, como na imagem */
             color: var(--cor-secundaria);
             font-weight: 700;
-            text-decoration: none;
             text-shadow: 0 0 5px #00ffff;
         }
+        
+        /* Removido: .bloco-contato-principal a (não será mais um link interno) */
 
         .botoes-contato {
             display: flex;
@@ -172,7 +190,7 @@
         }
 
         .botao-contato {
-            padding: 10px 20px;
+            padding: 10px 25px;
             border: none;
             border-radius: 5px;
             color: var(--cor-texto);
@@ -184,36 +202,29 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            background-image: linear-gradient(90deg, #5865F2, #7289DA); /* Gradiente Discord */
+            box-shadow: 0 0 10px #5865F2;
         }
 
         .botao-contato:hover {
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 5px 15px rgba(88, 101, 242, 0.5);
         }
-
-        .botao-discord {
-            background-image: var(--gradiente-botoes);
-            box-shadow: 0 0 10px #5865F2;
-        }
-
-        .botao-email {
-            background-image: var(--gradiente-email);
-            box-shadow: 0 0 10px #e34034;
-        }
-
-        /* O bloco .bloco-projeto-novo foi removido aqui. */
 
         .rodape {
             margin-top: auto;
             padding: 20px 0;
             width: 100%;
-            background-color: rgba(0, 0, 0, 0.6); 
+            background-color: rgba(10, 10, 26, 0.6);
             font-size: 0.9em;
         }
 
         @media (max-width: 600px) {
             .nome-principal {
                 font-size: 3em;
+            }
+            .titulo-conversar {
+                font-size: 2.5em;
             }
             .botoes-contato {
                 flex-direction: column;
@@ -233,9 +244,9 @@
     <header class="cabecalho-nav">
         <nav>
             <ul>
-                <li><a href="#apresentacao" class="ativo">✨ Apresentação</a></li>
+                <li><a href="#apresentacao" class="ativo">🧑‍💻 Apresentação</a></li>
                 <li><a href="#experiencia">🛡️ Experiência</a></li>
-                <li><a href="#contato">📧 Contato</a></li>
+                <li><a href="#contato">💬 Contato</a></li>
             </ul>
         </nav>
     </header>
@@ -246,39 +257,33 @@
             <h1 class="nome-principal">Akuma</h1>
             
             <p class="descricao-cargo">
-                Community Administrator e Especialista em Arquitetura de Comunidades Digitais.
+                Administrador de comunidade e builder de servidores focado em segurança, processos claros e experiências engajadoras.
             </p>
 
             <div class="experiencia-destaque">
                 <p>
-                    <span style="color: yellow;">⭐</span> Minha atuação em gestão de comunidades se iniciou em **2023**, focada na criação e desenvolvimento de espaços digitais de alto desempenho.
+                    <span style="color: yellow;">✨</span> Tenho mais de 3 anos de experiência com gestão de comunidades no Discord.
                 </p>
                 <p>
-                    Como **Community Administrator**, especializo-me em **arquitetura de servidores** e no desenvolvimento de **propostas estruturais** que garantem a sustentabilidade e o engajamento da comunidade a longo prazo.
-                </p>
-                <p>
-                    Implemento soluções de **segurança robusta**, **workflows eficientes** e **automações personalizadas** para otimizar a experiência do usuário.
+                    Desenvolvo **projetos completos de servidores** (arquitetura de canais, roles, automações e políticas de segurança) e executo **planos de engajamento** para manter a comunidade **viva**, **ativa** e **unida**.
                 </p>
             </div>
         </section>
 
         <section id="contato" class="secao-conversar">
-            <h2 class="titulo-conversar">Vamos Conectar!</h2>
+            <h2 class="titulo-conversar">Vamos conversar</h2>
 
             <p class="sub-titulo">
-                Aberto a oportunidades de gerenciamento, consultoria e otimização de comunidades.
+                Aberto a oportunidades de moderação, coordenação e estrutura de comunidades.
             </p>
 
             <div class="bloco-contato-principal">
-                Fale comigo — <a href="LINK_DO_SEU_DISCORD">Discord</a> ou <a href="mailto:SEU_EMAIL@exemplo.com">Email</a>. Geralmente estou online e respondo rapidamente!
+                Chame no <span style="color: var(--cor-secundaria);">discord</span> para qualquer projeto
             </div>
 
             <div class="botoes-contato">
-                <a href="LINK_DO_SEU_DISCORD" class="botao-contato botao-discord">
+                <a href="LINK_DO_SEU_DISCORD" class="botao-contato">
                     <span style="font-size: 1.2em;">💬</span> Discord
-                </a>
-                <a href="mailto:SEU_EMAIL@exemplo.com" class="botao-contato botao-email">
-                    <span style="font-size: 1.2em;">📧</span> Email
                 </a>
             </div>
             
