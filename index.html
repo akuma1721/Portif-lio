@@ -99,6 +99,21 @@
             z-index: 1; 
         }
 
+        /* --- Estilos Comuns de Título (Branco Sólido) --- */
+        .titulo-secao {
+            font-size: 3em;
+            font-weight: 900;
+            margin-bottom: 10px;
+            color: var(--cor-texto);
+            text-shadow: none;
+        }
+
+        .subtitulo-secao {
+            font-size: 1.1em;
+            margin-bottom: 40px;
+            color: #aaa;
+        }
+
         /* --- Seção de Apresentação --- */
         .secao-apresentacao {
             padding: 40px 20px;
@@ -146,27 +161,83 @@
             font-weight: 700;
         }
         
+        /* --- Seção de Comunidades --- */
+        .secao-comunidades {
+            padding: 40px 20px;
+            margin-bottom: 50px;
+        }
+        
+        .comunidades-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .card-comunidade {
+            background-color: rgba(20, 20, 20, 0.8);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: left;
+        }
+
+        .card-comunidade:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 25px rgba(138, 43, 226, 0.5);
+        }
+
+        .card-imagem {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            /* Placeholder para o fundo */
+            background-color: #333; 
+            border-bottom: 3px solid var(--cor-primaria);
+        }
+
+        .card-conteudo {
+            padding: 15px;
+        }
+
+        .card-titulo {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: var(--cor-secundaria);
+            margin-bottom: 5px;
+        }
+
+        .card-descricao {
+            font-size: 0.9em;
+            color: #ccc;
+            margin-bottom: 15px;
+        }
+
+        .botao-join {
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: var(--cor-discord);
+            color: var(--cor-texto);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .botao-join:hover {
+            background-color: #4e59c7;
+        }
+
+        
         /* --- Seção de Contato/Conversar --- */
         .secao-conversar {
             padding: 50px 20px;
             margin-top: 50px;
         }
 
-        /* VAMOS CONVERSAR: BRANCO SÓLIDO */
-        .titulo-conversar {
-            font-size: 3em;
-            font-weight: 900;
-            margin-bottom: 20px;
-            color: var(--cor-texto);
-            text-shadow: none;
-        }
-
-        .sub-titulo {
-            font-size: 1.1em;
-            margin-bottom: 40px;
-            color: #aaa;
-        }
-
+        /* VAMOS CONVERSAR usa .titulo-secao (Branco Sólido) */
+        
         .bloco-contato-principal {
             padding: 15px 30px;
             border-radius: 10px;
@@ -220,11 +291,11 @@
             font-size: 0.9em;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             .nome-principal {
                 font-size: 3em;
             }
-            .titulo-conversar {
+            .titulo-secao {
                 font-size: 2.5em;
             }
             .botoes-contato {
@@ -235,6 +306,9 @@
                 width: 80%;
                 margin: 0 auto;
                 justify-content: center;
+            }
+            .comunidades-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -249,7 +323,7 @@
         <nav>
             <ul>
                 <li><a href="#apresentacao" class="ativo">🧑‍💻 Apresentação</a></li>
-                <li><a href="#experiencia">🛡️ Experiência</a></li>
+                <li><a href="#comunidades">🛡️ Comunidades</a></li>
                 <li><a href="#contato">💬 Contato</a></li>
             </ul>
         </nav>
@@ -272,144 +346,4 @@
                     Como Community Administrator, especializo-me em arquitetura de servidores e no desenvolvimento de propostas estruturais que garantem a sustentabilidade e o crescimento da comunidade a longo prazo.
                 </p>
                 <p>
-                    Implemento soluções de segurança robusta, workflows eficientes e automações personalizadas para otimizar a experiência do usuário e do staff.
-                </p>
-            </div>
-        </section>
-
-        <section id="contato" class="secao-conversar">
-            <h2 class="titulo-conversar">Vamos conversar</h2>
-
-            <p class="sub-titulo">
-                Aberto a projetos de estrutura, coordenação e moderação de comunidades no Discord.
-            </p>
-
-            <div class="bloco-contato-principal">
-                Chame no <span style="color: var(--cor-secundaria);">discord</span> para qualquer projeto
-            </div>
-
-            <div class="botoes-contato">
-                <a href="https://discord.com/users/SEU_ID_DISCORD_AQUI" class="botao-contato">
-                    <span style="font-size: 1.2em;">💬</span> Discord
-                </a>
-            </div>
-        </section>
-
-    </div>
-
-    <footer class="rodape">
-        &copy; 2025 Akuma. Todos os direitos reservados.
-    </footer>
-
-    
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script>
-        // Configuração para as partículas (Brancas, interativas)
-        particlesJS('particles-js', {
-            "particles": {
-                "number": {
-                    "value": 80, 
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": {
-                    "value": "#ffffff" 
-                },
-                "shape": {
-                    "type": "circle", 
-                    "stroke": {
-                        "width": 0,
-                        "color": "#000000"
-                    },
-                    "polygon": {
-                        "nb_sides": 5
-                    }
-                },
-                "opacity": {
-                    "value": 0.5, 
-                    "random": false,
-                    "anim": {
-                        "enable": false,
-                        "speed": 1,
-                        "opacity_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "size": {
-                    "value": 3, 
-                    "random": true,
-                    "anim": {
-                        "enable": false,
-                        "speed": 40,
-                        "size_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "line_linked": {
-                    "enable": true, 
-                    "distance": 150, 
-                    "color": "#ffffff", 
-                    "opacity": 0.4,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true, 
-                    "speed": 2, 
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false,
-                    "attract": {
-                        "enable": false,
-                        "rotateX": 600,
-                        "rotateY": 1200
-                    }
-                }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": true, 
-                        "mode": "grab" 
-                    },
-                    "onclick": {
-                        "enable": true, 
-                        "mode": "push" 
-                    },
-                    "resize": true
-                },
-                "modes": {
-                    "grab": {
-                        "distance": 140,
-                        "line_linked": {
-                            "opacity": 1
-                        }
-                    },
-                    "bubble": {
-                        "distance": 400,
-                        "size": 40,
-                        "duration": 2,
-                        "opacity": 8,
-                        "speed": 3
-                    },
-                    "repulse": {
-                        "distance": 200,
-                        "duration": 0.4
-                    },
-                    "push": {
-                        "particles_nb": 4
-                    },
-                    "remove": {
-                        "particles_nb": 2
-                    }
-                }
-            },
-            "retina_detect": true
-        });
-    </script>
-</body>
-</html>
+                    Implemento soluções de segurança robusta, workflows eficientes e automações personalizadas para otimizar a experiência do usuário e
