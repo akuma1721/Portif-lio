@@ -4,193 +4,155 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Akuma — Portfólio</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: "Inter", sans-serif;
-      scroll-behavior: smooth;
+      font-family: "Poppins", sans-serif;
     }
 
     body {
-      background: radial-gradient(circle at 30% 30%, #1a1a1d, #0d0d0f 70%);
-      color: #f2f2f2;
-      min-height: 100vh;
-      position: relative;
-    }
-
-    #particles-js {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: -1;
+      background: radial-gradient(circle at top, #0a0a0a 0%, #000000 100%);
+      color: #fff;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
     }
 
     header {
       position: fixed;
       top: 0;
+      left: 0;
       width: 100%;
-      background: rgba(10, 10, 12, 0.7);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      z-index: 10;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(8px);
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 50px;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem 0;
+      z-index: 10;
     }
 
-    header h1 {
-      color: white;
-      font-size: 1.4em;
-      font-weight: 600;
-    }
-
-    nav a {
+    header a {
       color: #ccc;
       text-decoration: none;
-      margin-left: 30px;
-      font-weight: 400;
-      transition: color 0.3s;
+      font-weight: 500;
+      transition: 0.3s;
     }
 
-    nav a:hover {
+    header a:hover {
       color: #fff;
     }
 
     section {
-      max-width: 800px;
-      margin: 120px auto;
-      background: rgba(15, 15, 18, 0.85);
-      padding: 50px 40px;
-      border-radius: 20px;
-      box-shadow: 0 0 40px rgba(255, 255, 255, 0.05);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 8rem 2rem;
+    }
+
+    .hero {
       text-align: center;
     }
 
-    h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
-      color: #fff;
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
     }
 
-    p {
-      color: #d0d0d0;
-      line-height: 1.7;
-      margin-bottom: 40px;
-      font-weight: 300;
+    .hero p {
+      color: #ccc;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
     }
 
-    .server {
-      padding: 10px;
-      margin-bottom: 20px;
-      transition: all 0.3s ease;
-    }
-
-    .server img {
-      width: 60%;
-      border-radius: 10px;
-      margin-bottom: 15px;
-      transition: transform 0.3s ease;
-    }
-
-    .server img:hover {
-      transform: scale(1.03);
-    }
-
-    .server h3 {
-      color: #fff;
-      margin-bottom: 10px;
-    }
-
-    .server p {
-      color: #bfbfbf;
-      margin-bottom: 15px;
-      font-size: 0.95em;
-    }
-
-    .server a {
-      text-decoration: none;
-      color: #ffffff;
-      font-weight: 500;
-      padding: 10px 20px;
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.08);
-      transition: background 0.3s ease, transform 0.2s ease;
-    }
-
-    .server a:hover {
-      background: rgba(255, 255, 255, 0.15);
-      transform: translateY(-2px);
-    }
-
-    .discord-btn {
+    .btn {
       display: inline-block;
-      text-decoration: none;
+      background: linear-gradient(90deg, #007bff, #00d4ff);
       color: white;
-      background: #5865f2;
-      padding: 14px 28px;
-      border-radius: 10px;
-      font-weight: 500;
-      transition: background 0.3s ease, transform 0.2s ease;
+      padding: 0.8rem 1.8rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
     }
 
-    .discord-btn:hover {
-      background: #4752c4;
-      transform: translateY(-3px);
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #00d4ff;
+    }
+
+    .servers {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .server-card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1.5rem;
+      border-radius: 15px;
+      max-width: 400px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .server-card:hover {
+      transform: scale(1.02);
+    }
+
+    .server-card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
     }
 
     footer {
       text-align: center;
-      color: #777;
-      margin: 50px 0 30px;
-      font-size: 0.9em;
+      padding: 2rem;
+      color: #888;
+      background: rgba(0, 0, 0, 0.6);
     }
   </style>
 </head>
 <body>
-  <div id="particles-js"></div>
-
   <header>
-    <h1>Akuma</h1>
-    <nav>
-      <a href="#inicio">Início</a>
-      <a href="#servidores">Servidores</a>
-      <a href="#contato">Contato</a>
-    </nav>
+    <a href="#inicio">Início</a>
+    <a href="#servidores">Servidores</a>
+    <a href="#contato">Contato</a>
   </header>
 
-  <section id="inicio">
-    <h2>Bem-vindo</h2>
-    <p>
-      Olá, sou <b>Akuma</b> — Community Administrator.  
-      Atuo em comunidades desde 2023, com foco em estruturação, organização e desenvolvimento de servidores no Discord.  
-      Busco sempre entregar identidade, clareza e propósito em cada projeto que gerencio.
-    </p>
+  <section id="inicio" class="hero">
+    <h1>Akuma</h1>
+    <p>Community Administrator — atuo em comunidades desde 2023.</p>
+    <a href="#contato" class="btn">Entrar em Contato</a>
   </section>
 
   <section id="servidores">
-    <h2>Servidores em Destaque</h2>
-    <div class="server">
-      <img src="https://i.postimg.cc/bN2d7WW0/cd7d6bbe3c8769a93be067d8ded64040.png" alt="The Ocean" />
-      <h3>The Ocean</h3>
-      <p>Servidor temático de Blox Fruits, com estrutura e gerenciamento criados por mim.</p>
-      <a href="https://discord.gg/mwKTV8D3" target="_blank">Visitar Servidor</a>
+    <h2>Comunidades</h2>
+    <div class="servers">
+      <div class="server-card">
+        <img src="https://i.postimg.cc/bN2d7WW0/cd7d6bbe3c8769a93be067d8ded64040.png" alt="The Ocean">
+        <h3>The Ocean</h3>
+        <a href="https://discord.gg/mwKTV8D3" target="_blank" class="btn">Entrar no Servidor</a>
+      </div>
     </div>
   </section>
 
   <section id="contato">
     <h2>Contato</h2>
-    <p>Entre em contato comigo através do Discord.</p>
-    <a class="discord-btn" href="https://discord.com/users/@meu_id" target="_blank">Entrar em Contato</a>
+    <p>Quer conversar comigo sobre projetos ou comunidades?</p>
+    <a href="https://discord.com/users/SEU_ID_AQUI" class="btn" target="_blank">Falar no Discord</a>
   </section>
 
   <footer>
-    <p>© 2
+    © 2025 Akuma. Todos os direitos reservados.
+  </footer>
+</body>
+</html>
