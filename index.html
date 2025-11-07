@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akuma - Comunidades e Estrutura</title>
+    <title>Akuma - Community Administrator</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
         /* Estilos CSS embutidos */
@@ -35,27 +35,27 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            position: relative; /* Necessário para posicionar o particles-js */
+            position: relative; 
             overflow-x: hidden;
         }
 
         /* Estilo para o contêiner de partículas */
         #particles-js {
-            position: fixed; /* Fixa no fundo */
+            position: fixed; 
             width: 100%;
             height: 100%;
-            background-color: var(--cor-fundo); /* Garante o fundo preto das partículas */
-            background-image: url(''); /* Nenhuma imagem de fundo para as partículas */
+            background-color: var(--cor-fundo);
+            background-image: url('');
             background-repeat: no-repeat;
             background-size: cover;
             background-position: 50% 50%;
-            z-index: -1; /* Manda para trás do conteúdo */
+            z-index: -1; 
         }
 
         /* Garante que o conteúdo fique por cima das partículas */
         .cabecalho-nav, .container, .rodape {
             position: relative;
-            z-index: 1; /* Garante que fiquem acima das partículas */
+            z-index: 1; 
         }
 
         .cabecalho-nav {
@@ -63,9 +63,9 @@
             top: 0;
             width: 100%;
             padding: 15px 0;
-            background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro para a barra */
+            background-color: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(5px);
-            z-index: 10; /* Permanece acima de tudo */
+            z-index: 10;
         }
 
         .cabecalho-nav nav {
@@ -131,7 +131,7 @@
 
         .experiencia-destaque {
             padding: 25px;
-            background-color: rgba(20, 20, 20, 0.8); /* Fundo sutilmente mais claro que o fundo */
+            background-color: rgba(20, 20, 20, 0.8);
             border-radius: 15px;
             margin: 0 auto;
             max-width: 750px;
@@ -219,7 +219,7 @@
             margin-top: auto;
             padding: 20px 0;
             width: 100%;
-            background-color: rgba(0, 0, 0, 0.6); /* Rodapé escuro */
+            background-color: rgba(0, 0, 0, 0.6);
             font-size: 0.9em;
         }
 
@@ -245,7 +245,8 @@
 </head>
 <body>
 
-    <div id="particles-js"></div>
+    
+<div id="particles-js"></div>
 
     <header class="cabecalho-nav">
         <nav>
@@ -268,7 +269,7 @@
 
             <div class="experiencia-destaque">
                 <p>
-                    Minha atuação em gestão de comunidades se iniciou em 2023, focada na criação e desenvolvimento de espaços digitais de alto desempenho.
+                    Minha atuação em gestão de comunidades se iniciou em **2023**, focada na criação e desenvolvimento de espaços digitais de alto desempenho.
                 </p>
                 <p>
                     Como Community Administrator, especializo-me em arquitetura de servidores e no desenvolvimento de propostas estruturais que garantem a sustentabilidade e o engajamento da comunidade a longo prazo.
@@ -303,23 +304,24 @@
         &copy; 2025 Akuma. Todos os direitos reservados.
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script>
-        // Configuração básica para as partículas
+        // Configuração para as partículas (Brancas, interativas)
         particlesJS('particles-js', {
             "particles": {
                 "number": {
-                    "value": 80, // Quantidade de partículas
+                    "value": 80, 
                     "density": {
                         "enable": true,
                         "value_area": 800
                     }
                 },
                 "color": {
-                    "value": "#ffffff" // Cor das partículas (branco)
+                    "value": "#ffffff" 
                 },
                 "shape": {
-                    "type": "circle", // Formato das partículas
+                    "type": "circle", 
                     "stroke": {
                         "width": 0,
                         "color": "#000000"
@@ -329,7 +331,7 @@
                     }
                 },
                 "opacity": {
-                    "value": 0.5, // Opacidade das partículas
+                    "value": 0.5, 
                     "random": false,
                     "anim": {
                         "enable": false,
@@ -339,7 +341,7 @@
                     }
                 },
                 "size": {
-                    "value": 3, // Tamanho das partículas
+                    "value": 3, 
                     "random": true,
                     "anim": {
                         "enable": false,
@@ -349,15 +351,15 @@
                     }
                 },
                 "line_linked": {
-                    "enable": true, // Habilita linhas entre partículas
-                    "distance": 150, // Distância para conectar
-                    "color": "#ffffff", // Cor das linhas
+                    "enable": true, 
+                    "distance": 150, 
+                    "color": "#ffffff", 
                     "opacity": 0.4,
                     "width": 1
                 },
                 "move": {
-                    "enable": true, // Habilita movimento
-                    "speed": 2, // Velocidade do movimento
+                    "enable": true, 
+                    "speed": 2, 
                     "direction": "none",
                     "random": false,
                     "straight": false,
@@ -374,12 +376,12 @@
                 "detect_on": "canvas",
                 "events": {
                     "onhover": {
-                        "enable": true, // Efeito ao passar o mouse
-                        "mode": "grab" // Partículas se atraem
+                        "enable": true, 
+                        "mode": "grab" 
                     },
                     "onclick": {
-                        "enable": true, // Efeito ao clicar
-                        "mode": "push" // Adiciona partículas
+                        "enable": true, 
+                        "mode": "push" 
                     },
                     "resize": true
                 },
