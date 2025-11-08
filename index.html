@@ -1,64 +1,593 @@
-/* --- Estilos CSS Revisados --- */
-:root {
-    --cor-fundo: #000000;
-    --cor-texto: #ffffff;
-    --cor-primaria: #6A5ACD; /* Roxo suave (Slate Blue) */
-    --cor-secundaria: #00BFFF; /* Azul claro (Deep Sky Blue) - Suavizado */
-    --cor-acento: #4682B4; /* Azul mais neutro para destaque */
-    --gradiente-contato: linear-gradient(90deg, #6A5ACD, #483D8B); /* Gradiente suave */
-    --cor-discord: #5865F2; 
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akuma - Community Administrator Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* --- Estilos CSS Revisados --- */
+        :root {
+            --cor-fundo: #000000;
+            --cor-texto: #ffffff;
+            --cor-primaria: #6A5ACD; /* Roxo suave (Slate Blue) */
+            --cor-secundaria: #00BFFF; /* Azul claro (Deep Sky Blue) - Suavizado */
+            --cor-acento: #4682B4; /* Azul mais neutro para destaque */
+            --gradiente-contato: linear-gradient(90deg, #6A5ACD, #483D8B); /* Gradiente suave */
+            --cor-discord: #5865F2; 
+        }
 
-/* Removidas sombras de texto e brilhos */
-h2 {
-    /* ... outras propriedades ... */
-    color: var(--cor-secundaria);
-    text-shadow: none; /* REMOVIDO NEON */
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-.descricao-cargo {
-    /* ... outras propriedades ... */
-    color: var(--cor-acento);
-    text-shadow: none; /* REMOVIDO NEON */
-}
+        body {
+            background-color: var(--cor-fundo); 
+            color: var(--cor-texto);
+            text-align: center;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            position: relative; 
+            overflow-x: hidden;
+        }
 
-.cabecalho-nav nav {
-    /* ... outras propriedades ... */
-    box-shadow: 0 0 10px rgba(106, 90, 205, 0.3); /* Sombra mais suave */
-}
+        #particles-js {
+            position: fixed; 
+            width: 100%;
+            height: 100%;
+            background-color: var(--cor-fundo);
+            z-index: -1; 
+        }
 
-.cabecalho-nav a:hover, .cabecalho-nav a.ativo {
-    color: var(--cor-secundaria);
-    background-color: rgba(70, 130, 180, 0.2); /* Fundo suave */
-}
+        .cabecalho-nav, .container, .rodape {
+            position: relative;
+            z-index: 1; 
+        }
 
-.sobre-mim-texto {
-    /* ... outras propriedades ... */
-    box-shadow: 0 0 15px rgba(106, 90, 205, 0.4); /* Sombra mais suave */
-}
+        .cabecalho-nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 15px 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 10;
+        }
 
-/* Estilo do botão interativo (Hover e Transição) */
-.botao-contato {
-    /* ... estilos base ... */
-    background-image: linear-gradient(90deg, #5865F2, #7289DA); 
-    box-shadow: 0 0 10px #5865F2;
-    transition: all 0.3s ease; /* Adicionada transição suave */
-}
+        .cabecalho-nav nav {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 50px;
+            max-width: fit-content;
+            margin: 0 auto;
+            padding: 5px 15px;
+            box-shadow: 0 0 10px rgba(106, 90, 205, 0.3); /* Sombra mais suave */
+        }
 
-.botao-contato:hover {
-    transform: scale(1.05); /* Efeito de Zoom leve (Interativo) */
-    box-shadow: 0 5px 20px rgba(88, 101, 242, 0.7); /* Sombra mais evidente */
-    background-image: linear-gradient(90deg, #4354C8, #6079b7); /* Mudança sutil de cor */
-}
+        .cabecalho-nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
 
-.bloco-contato-principal span {
-    color: var(--cor-secundaria);
-    font-weight: 700;
-    text-shadow: none; /* REMOVIDO NEON */
-}
+        .cabecalho-nav a {
+            color: var(--cor-texto);
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: color 0.3s, background-color 0.3s;
+            font-weight: 600;
+        }
 
-/* Removido o brilho do nome principal */
-.nome-principal {
-    /* ... outras propriedades ... */
-    text-shadow: none; /* REMOVIDO NEON */
-}
+        .cabecalho-nav a:hover, .cabecalho-nav a.ativo {
+            color: var(--cor-secundaria);
+            background-color: rgba(70, 130, 180, 0.2);
+        }
+        
+        .container {
+            max-width: 1000px; 
+            width: 90%;
+            margin: 100px auto 50px auto;
+            padding: 20px;
+            z-index: 1; 
+        }
+
+        /* --- Estilos Comuns de Seção --- */
+        section {
+            padding: 50px 20px;
+            margin-bottom: 70px;
+            background-color: rgba(10, 10, 10, 0.6);
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(106, 90, 205, 0.2); /* Sombra mais suave */
+            text-align: left;
+        }
+
+        h2 {
+            font-size: 3em;
+            font-weight: 900;
+            margin-bottom: 30px;
+            color: var(--cor-secundaria);
+            text-align: center;
+            text-transform: uppercase;
+            text-shadow: none; /* REMOVIDO NEON */
+        }
+
+        /* --- Seção Apresentação/Sobre Mim --- */
+        .secao-apresentacao {
+            background-color: transparent;
+            box-shadow: none;
+            text-align: center;
+            padding-top: 20px;
+        }
+        .nome-principal {
+            font-size: 5em; 
+            font-weight: 900;
+            margin-bottom: 15px;
+            color: var(--cor-texto); 
+            text-shadow: none; /* REMOVIDO NEON */
+        }
+
+        .descricao-cargo {
+            font-size: 1.5em;
+            font-weight: 700; 
+            color: var(--cor-acento); /* Cor mais neutra */
+            margin-bottom: 40px;
+            text-shadow: none; /* REMOVIDO NEON */
+        }
+
+        .sobre-mim-texto {
+            padding: 25px;
+            background-color: rgba(20, 20, 20, 0.8);
+            border-radius: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+            box-shadow: 0 0 15px rgba(106, 90, 205, 0.4); /* Sombra mais suave */
+        }
+
+        .sobre-mim-texto p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        
+        /* --- Seção Habilidades --- */
+        .secao-habilidades h2 {
+            text-align: center;
+        }
+        .habilidades-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .habilidade-item {
+            background-color: rgba(50, 50, 50, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid var(--cor-primaria);
+            transition: transform 0.2s, box-shadow 0.3s;
+        }
+
+        .habilidade-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 191, 255, 0.3); /* Cor mais suave */
+        }
+
+        .habilidade-item h3 {
+            color: var(--cor-secundaria);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .habilidade-item ul {
+            list-style: none;
+            padding-left: 0;
+            font-size: 0.95em;
+        }
+        /* --- Seção Projetos/Estudos de Caso --- */
+        .projeto-card {
+            background-color: rgba(30, 30, 30, 0.9);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border: 1px solid var(--cor-primaria);
+            transition: border-color 0.3s;
+        }
+
+        .projeto-card:hover {
+            border-color: var(--cor-secundaria);
+        }
+
+        .projeto-card h3 {
+            color: var(--cor-primaria);
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            font-weight: 900;
+            text-align: center;
+        }
+
+        .projeto-card strong {
+            color: var(--cor-secundaria);
+        }
+
+        .projeto-card p {
+            margin-bottom: 10px;
+        }
+
+        .projeto-resultado {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: rgba(0, 191, 255, 0.1); /* Cor mais suave */
+            border-radius: 5px;
+            border-left: 3px solid var(--cor-secundaria);
+            font-weight: 600;
+        }
+        .projeto-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .projeto-link a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--cor-discord);
+            color: var(--cor-texto);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+        .projeto-link a:hover {
+            background-color: #4354C8;
+        }
+        /* --- Seção Contato --- */
+        .secao-conversar {
+            text-align: center;
+        }
+        .bloco-contato-principal {
+            padding: 15px 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            background-image: var(--gradiente-contato); 
+            box-shadow: 0 0 15px rgba(106, 90, 205, 0.5); /* Sombra suave */
+            font-weight: 700;
+            font-size: 1.2em;
+            max-width: 500px;
+            margin: 0 auto 30px auto;
+        }
+
+        .bloco-contato-principal span {
+            color: var(--cor-secundaria);
+            font-weight: 700;
+            text-shadow: none; /* REMOVIDO NEON */
+        }
+        
+        .botoes-contato {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .botao-contato {
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            color: var(--cor-texto);
+            font-size: 1em;
+            cursor: pointer;
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background-image: linear-gradient(90deg, #5865F2, #7289DA); 
+            box-shadow: 0 0 10px #5865F2;
+            transition: all 0.3s ease; /* Transição para o efeito interativo */
+        }
+
+        /* Efeito Interativo no Hover */
+        .botao-contato:hover {
+            transform: scale(1.05); /* Cresce levemente */
+            box-shadow: 0 5px 20px rgba(88, 101, 242, 0.7); /* Sombra mais evidente */
+            background-image: linear-gradient(90deg, #4354C8, #6079b7); /* Mudança sutil de cor */
+        }
+
+        .rodape {
+            margin-top: auto;
+            padding: 20px 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .nome-principal {
+                font-size: 3.5em;
+            }
+            .titulo-conversar, .secao-habilidades h2, .secao-projetos h2 {
+                font-size: 2.5em;
+            }
+            .cabecalho-nav ul {
+                gap: 5px;
+                flex-wrap: wrap;
+            }
+            .botoes-contato {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .botao-contato {
+                width: 80%;
+                margin: 0 auto;
+                justify-content: center;
+            }
+        }
+        @media (max-width: 480px) {
+             .nome-principal {
+                font-size: 3em;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="particles-js"></div>
+
+    <header class="cabecalho-nav">
+        <nav>
+            <ul>
+                <li><a href="#sobre" class="ativo">🧑‍💻 Sobre</a></li>
+                <li><a href="#habilidades">🛡️ Habilidades</a></li>
+                <li><a href="#projetos">🎯 Projetos</a></li>
+                <li><a href="#contato">💬 Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <section id="sobre" class="secao-apresentacao">
+            <h1 class="nome-principal">Akuma</h1>
+            
+            <p class="descricao-cargo">
+                Community Administrator | Especialista em Estrutura e Engajamento de Comunidades no Discord.
+            </p>
+
+            <div class="sobre-mim-texto">
+                <p>
+                    Desde **[Ano de Início]**, dedico-me à gestão e arquitetura de comunidades online de alta performance. Minha missão é transformar espaços digitais em ecossistemas sustentáveis, seguros e altamente engajadores.
+                </p>
+                <p>
+                    **Proposta de Valor:** Eu não apenas modero, eu **projeto**. Minha especialidade é desenvolver *blueprints* estruturais de servidores (canais, cargos, permissões) que suportam o crescimento a longo prazo e integram automações avançadas para maximizar a eficiência do staff.
+                </p>
+                <p>
+                    Busco oportunidades onde posso aplicar **metodologias de gestão de projetos** para otimizar a experiência do usuário e criar uma **cultura de comunidade** robusta e positiva.
+                </p>
+            </div>
+        </section>
+
+        <section id="habilidades" class="secao-habilidades">
+            <h2>🛡️ Habilidades e Ferramentas</h2>
+            
+            <div class="habilidades-grid">
+                
+                <div class="habilidade-item">
+                    <h3>Arquitetura de Servidor</h3>
+                    <ul>
+                        <li>Estrutura de Canais Lógica (Design UX/UI)</li>
+                        <li>Configuração de Permissões Complexas (Role Hierarchy)</li>
+                        <li>Implementação de Security/Raid Protection</li>
+                        <li>Templates (Xenon Bot)</li>
+                    </ul>
+                </div>
+                
+                <div class="habilidade-item">
+                    <h3>Automação e Bots</h3>
+                    <ul>
+                        <li>Onboarding Personalizado (Sistema de Verificação)</li>
+                        <li>Bots de Moderação (MEE6, Dyno, Carl-bot)</li>
+                        <li>Configuração de Webhooks e Integrações</li>
+                        <li>Sistemas de Nível/XP e Economia (Ex: Arcane, Tatsu)</li>
+                    </ul>
+                </div>
+                
+                <div class="habilidade-item">
+                    <h3>Gestão e Engajamento</h3>
+                    <ul>
+                        <li>Criação de Calendário de Eventos (AMA, Jogos, etc.)</li>
+                        <li>Estratégias de Retenção de Membros (1/7/30 dias)</li>
+                        <li>Resolução de Conflitos e Mediação</li>
+                        <li>Treinamento e Coordenação de Equipes de Staff</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section id="projetos" class="secao-projetos">
+            <h2>🎯 Projetos e Estudos de Caso</h2>
+
+            <div class="projeto-card">
+                <h3>Projeto 1: Reestruturação de Comunidade de Gaming Competitivo</h3>
+                <p>
+                    <strong>Situação:</strong> Um servidor com 5.000 membros inativo, com sobrecarga na moderação e canais desorganizados.
+                </p>
+                <p>
+                    <strong>Ação:</strong> Implementei um novo sistema de cargos baseados em jogos (Self-Roles), criei 4 novas categorias temáticas e centralizei os canais de feedback e regras.
+                </p>
+                <div class="projeto-resultado">
+                    **Resultado Mensurável:** A taxa de mensagens diárias (DAU) aumentou **35%** e o tempo de resposta da equipe de moderação diminuiu em **60%**.
+                </div>
+                <div class="projeto-link">
+                    <a href="#" target="_blank">Ver Template/Estudo de Caso (Exemplo)</a>
+                </div>
+            </div>
+
+            <div class="projeto-card">
+                <h3>Projeto 2: Onboarding Automatizado para Plataforma de Cursos</h3>
+                <p>
+                    <strong>Situação:</strong> Alto número de novos membros, mas baixa conversão em participação nas aulas e eventos.
+                </p>
+                <p>
+                    <strong>Ação:</strong> Desenvolvi um fluxo de *Onboarding* com 3 etapas (Regras > Verificação > Seleção de Interesses), usando o bot **Auttaja** para atribuir cargos específicos de curso.
+                </p>
+                <div class="projeto-resultado">
+                    **Resultado Mensurável:** A retenção de membros novos (após 7 dias) subiu **22%**. O uso dos canais de suporte técnico cresceu **50%**.
+                </div>
+                <div class="projeto-link">
+                    <a href="#" target="_blank">Ver Imagens de Estrutura</a>
+                </div>
+            </div>
+
+            </section>
+
+        <section id="contato" class="secao-conversar">
+            <h2>💬 Vamos Conversar</h2>
+
+            <div class="bloco-contato-principal">
+                Chame no <span style="color: var(--cor-secundaria);">discord</span> para qualquer projeto ou colaboração
+            </div>
+
+            <div class="botoes-contato">
+                <a href="https://discord.com/users/SEU_ID_DISCORD" class="botao-contato">
+                    <span style="font-size: 1.2em;">💬</span> Discord (Akuma#1234)
+                </a>
+                
+                <a href="mailto:seuemail@exemplo.com" class="botao-contato" style="background-image: linear-gradient(90deg, #4682B4, #5F9EA0); box-shadow: 0 0 10px #4682B4;">
+                    <span style="font-size: 1.2em;">📧</span> E-mail
+                </a>
+                
+                <a href="URL_SEU_LINKEDIN" class="botao-contato" style="background-image: linear-gradient(90deg, #0077B5, #006093); box-shadow: 0 0 10px #0077B5;">
+                    <span style="font-size: 1.2em;">🔗</span> LinkedIn
+                </a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="rodape">
+        &copy; 2025 Akuma. Todos os direitos reservados.
+    </footer>
+
+    
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+        // Configuração para as partículas (Brancas, interativas) - Mantida
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80, 
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff" 
+                },
+                "shape": {
+                    "type": "circle", 
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5, 
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3, 
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true, 
+                    "distance": 150, 
+                    "color": "#ffffff", 
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true, 
+                    "speed": 2, 
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true, 
+                        "mode": "grab" 
+                    },
+                    "onclick": {
+                        "enable": true, 
+                        "mode": "push" 
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>
